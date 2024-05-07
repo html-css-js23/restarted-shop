@@ -4,26 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Facebook Pixel Purchase Event</title>
-</head>
-<body>
-
-  <!-- Your button -->
-  <button id="purchaseButton">Purchase</button>
-
-  <script>
-    // Function to trigger the Facebook Pixel Purchase event
-    function trackPurchase() {
-      // Insert your Facebook Pixel code here
-      fbq('track', 'Purchase', {
-        currency: 'AED',
-      });
-      // Optionally, you can redirect the user after the purchase
-      // window.location.href = "thank_you_page.html";
-    }
-
-    // Add click event listener to the button
-    document.getElementById("purchaseButton").addEventListener("click", trackPurchase);
-  </script>
 
   <!-- Facebook Pixel code -->
   <script>
@@ -38,6 +18,26 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1097619814681928');
     fbq('track', 'PageView');
+  </script>
+  <!-- End Facebook Pixel code -->
+</head>
+<body>
+
+  <!-- Your button -->
+  <button id="purchaseButton">Purchase</button>
+
+  <script>
+    // Function to trigger the Facebook Pixel Purchase event
+    function trackPurchase() {
+      // Insert your Facebook Pixel Purchase event code here
+      fbq('track', 'Purchase', {
+        value: 100, // Example conversion value, replace with your actual value or variable
+        currency: 'AED' // Example currency, replace with your actual currency or variable
+      });
+    }
+
+    // Add click event listener to the button
+    document.getElementById("purchaseButton").addEventListener("click", trackPurchase);
   </script>
 
 </body>
