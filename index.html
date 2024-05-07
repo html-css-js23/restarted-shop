@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReStarted Shop</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Pixel Purchase Event</title>
 </head>
-<html>
-    <h1>Hey there! Welcome to Restarted website. We have 2 registered companys's on here: ZenAI, and ReStartedPC</h1>
-    
+<body>
+
+  <!-- Your button -->
+  <button id="purchaseButton">Purchase</button>
+
+  <script>
+    // Function to trigger the Facebook Pixel Purchase event
+    function trackPurchase() {
+      // Insert your Facebook Pixel code here
+      fbq('track', 'Purchase', {
+        currency: 'AED',
+      });
+      // Optionally, you can redirect the user after the purchase
+      // window.location.href = "thank_you_page.html";
+    }
+
+    // Add click event listener to the button
+    document.getElementById("purchaseButton").addEventListener("click", trackPurchase);
+  </script>
+
+  <!-- Facebook Pixel code -->
+  <script>
+    // Replace 'your_pixel_id' with your actual Facebook Pixel ID
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1097619814681928');
+    fbq('track', 'PageView');
+  </script>
+
+</body>
 </html>
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
- fbq('init', '1097619814681928'); 
-fbq('track', 'PageView');
-</script>
-<noscript>
- <img height="1" width="1" 
-src="https://www.facebook.com/tr?id=1097619814681928&ev=PageView
-&noscript=1"/>
-</noscript>
