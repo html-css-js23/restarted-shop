@@ -10,19 +10,19 @@
             font-family: Arial, sans-serif;
             background-color: #292929;
             color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
         }
         .top-bar {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
             background-color: #292929;
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             display: flex;
             gap: 10px;
+            z-index: 1000;
         }
         .top-bar a {
             text-decoration: none;
@@ -35,10 +35,14 @@
             background-color: #7289da;
         }
         .join-community {
-            background-color: #00d957;
+            background-color: #424549;
         }
         .invite-bot:hover, .join-community:hover {
             opacity: 0.9;
+        }
+        .content {
+            padding-top: 80px; /* Adjust this value to add space for the fixed top bar */
+            text-align: center;
         }
     </style>
 </head>
@@ -46,6 +50,10 @@
     <div class="top-bar">
         <a href="https://discord.com/oauth2/authorize?client_id=1230500325866344529" class="invite-bot">Invite the bot!</a>
         <a href="https://discord.gg/vYpbXYQ6nT" class="join-community">Join community server!</a>
+    </div>
+    <div class="content">
+        <h1>Welcome to Zenai Discord Bot</h1>
+        <p>Zenai is an advanced Discord bot that enhances your server experience.</p>
     </div>
 </body>
 </html>
