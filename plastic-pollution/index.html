@@ -2,23 +2,40 @@
 <html>
   <head>
     <title>GPGP - Great Pacific Garbage Patch</title>
+    <style>
+      .center {
+        text-align: center;
+      }
+      .left {
+        text-align: left;
+      }
+      .btn-circle {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-circle img {
+        width: 24px;
+        height: 24px;
+      }
+    </style>
   </head>
   <body>
     <h1 class="center">The Great Pacific Garbage Patch</h1>
-    <button class="btn btn-success" onclick=" window.open('http://html-css-js23.github.io/ocean-picking-game','_blank')">Try our Plastic Picking Game!</button>
+    <button class="btn-circle" onclick="window.open('http://html-css-js23.github.io/ocean-picking-game','_blank')">
+      <img src="images/favicon.ico" alt="Game Icon">
+    </button>
+    <credits>
+      <p class="left"><cite>This website was made by Alex.V & Mohamed</cite></p>
+    </credits>
   </body>
-  <credits>
-    <p class="left"><cite>This website was made by Alex.V & Mohamed</cite></p>
-  </credits>
 </html>
-<style>
-  .center {
-    text-align: center;
-  }
-  .left {
-    text-align: left;
-}
-</style>
-<script>
-  
-</script>
