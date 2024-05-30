@@ -3,6 +3,10 @@
   <head>
     <title>GPGP - Great Pacific Garbage Patch</title>
     <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+      }
       .center {
         text-align: center;
       }
@@ -11,7 +15,7 @@
       }
       .btn-rounded {
         position: absolute;
-        top: 18px;
+        top: 50px; /* Adjusted to be a few pixels lower */
         right: 10px;
         padding: 10px 20px;
         border-radius: 25px;
@@ -20,6 +24,19 @@
         border: none;
         cursor: pointer;
         font-size: 16px;
+        font-weight: bold;
+      }
+      .info-box {
+        background-color: #f0f0f0;
+        border: 2px solid #d3d3d3;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px 10px;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .info-box.visible {
+        opacity: 1;
       }
     </style>
   </head>
@@ -28,8 +45,32 @@
     <button class="btn-rounded" onclick="window.open('http://html-css-js23.github.io/ocean-picking-game','_blank')">
       Try our Ocean Picking Game
     </button>
+    <div class="info-box">
+      <h2>What is the Great Pacific Garbage Patch?</h2>
+      <p>The Great Pacific Garbage Patch (GPGP) is a vast area of marine debris accumulation in the central North Pacific Ocean. It is composed of plastic and other waste materials that have been gathered by ocean currents, forming large 'patches' of garbage.</p>
+    </div>
+    <div class="info-box">
+      <h2>Why is it a Problem?</h2>
+      <p>The GPGP poses significant threats to marine life, ecosystems, and human health. Marine animals can ingest or become entangled in the debris, leading to injury or death. Additionally, the breakdown of plastics releases harmful chemicals into the water.</p>
+    </div>
+    <div class="info-box">
+      <h2>What Can Be Done?</h2>
+      <p>Efforts to address the GPGP include reducing plastic use, improving waste management systems, and participating in cleanup initiatives. Awareness and education are crucial to mobilizing global action to tackle this environmental issue.</p>
+    </div>
     <credits>
       <p class="left"><cite>This website was made by Alex.V & Mohamed</cite></p>
     </credits>
+    <script>
+      document.addEventListener('scroll', function() {
+        var infoBoxes = document.querySelectorAll('.info-box');
+        infoBoxes.forEach(function(box) {
+          var boxPosition = box.getBoundingClientRect().top;
+          var windowHeight = window.innerHeight;
+          if (boxPosition < windowHeight - 100) {
+            box.classList.add('visible');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
